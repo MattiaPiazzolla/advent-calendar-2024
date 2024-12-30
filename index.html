@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/icons/ico-albero.png" type="image/x-icon">
-    <title>Advent Calendar</title>
+    <title>Calendario Dell'Avvento</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,12 +16,12 @@
 
         <!-- HEADER -->
         <header>
-            <h1>Advent Calendar <br>
+            <h1>Calendario dell'Avvento <br>
                 2024</h1>
             
             <!-- RESET BUTTON -->
             <button class="reset-btn">
-                Reset Calendar <i class="fas fa-redo-alt"></i>
+                Resetta il calendario <i class="fas fa-redo-alt"></i>
             </button>
         </header>
 
@@ -30,11 +30,20 @@
             <div class="calendar"></div>
         </main>
     </div>
-    
-    <!-- MODAL -->
-    <div class="modal"></div>
 
-    <!-- JS -->
-    <script src="script.js"></script>
+    <!-- MODAL -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <button class="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- SOURCE JS -->
+    <script src="./source.js" ></script>
+    <!-- MAIN JS -->
+    <script src="script.js" ></script>
 </body>
 </html>
