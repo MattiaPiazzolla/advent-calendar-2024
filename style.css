@@ -136,6 +136,73 @@ header h1{
     transform: scale(0.95);
 }
 
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal {
+    background-color: #DE98BC;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+  
+  .modal p {
+    margin-bottom: 20px;
+  }
+  
+  .close-modal {
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: #2E28EC;
+    color: #fff;
+    padding: 7.5px 10px;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .close-modal:hover {
+    background-color: #2a269d;
+  }
+
+  .close-modal:active {
+    transform: scale(0.95);
+  }
+
+.opened {
+    background-color: #fff;
+    color: #2D6653;
+}
+
+.opened:hover {
+    background-color: #e7e7e7;
+}
+
 .prevent-select {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
