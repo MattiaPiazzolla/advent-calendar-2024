@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: "Livvic", sans-serif;
+    font-family: 'Livvic', sans-serif;
     background-color: #100645;
     display: flex;
     justify-content: center;
@@ -15,9 +15,11 @@ body{
 .container{
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    max-width: 1200px;
+    width: 1200px;
+    padding: 0 10px;
+    
 }
+
 
 header{
     width: 100%;
@@ -26,7 +28,7 @@ header{
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-    padding: 30px 0 0 0;
+    padding: 30px 10px 0 10px;
     background-color: #2E28EC;
     background-image: url("./images/header-bg.png");
     background-position: bottom -250px center;
@@ -72,28 +74,90 @@ header h1{
     }
 }
 
-.calendar{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); 
     gap: 15px;
+    width: 100%; 
+    max-width: 1200px;
+    margin-bottom: 100px;
 }
 
-.day-box{
-    min-width: 100px;
-    aspect-ratio: 1/1;
+.day-box {
     background-color: #fff;
     color: #100645;
-    font-size: 1.5rem;
-    padding: 10px;
-    margin-bottom: 20px;
+    aspect-ratio: 1 / 1; 
     border-radius: 5px;
+    padding-top: 5px;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    background-color: #2D6653;
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 600;
 }
-.day-box:hover{
-    background-color: #e7e7e7;
+
+.last-day {
+    grid-column: 1 / -1;
+    cursor: pointer;
+    background-color: #D3D6F5;
+    color: #2D6653;
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 0.2s ease, background-color 0.2s ease;
 }
-.day-box:active{
+
+.last-day:hover {
+    background-color: #abadc4;
+    color: #2D6653;
+}
+
+.last-day:active {
     transform: scale(0.95);
+}
+
+
+
+.day-box:hover {
+    background-color: #255142;
+}
+
+.day-box:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 1200px) {
+    
+    .calendar {
+        grid-template-columns: repeat(6, 1fr); 
+    }
+}
+
+@media (max-width: 992px) {
+    .calendar {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .calendar {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 576px) {
+    .calendar {
+        grid-template-columns: repeat(1, 1fr); 
+    }
 }
