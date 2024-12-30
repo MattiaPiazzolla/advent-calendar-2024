@@ -9,9 +9,14 @@ const modalContent = document.querySelector('.modal-content');
 const closeModalButton = document.querySelector('.close-modal');
 
 // Function to open the modal
-function openModal() {
-    
-    
+function openModal(content) {
+    modalContent.innerHTML = content;
+    modalOverlay.style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+    modalOverlay.style.display = 'none';
 }
 
 // Base path for images
@@ -38,6 +43,11 @@ for (let i = 1; i <= 25; i++) {
     resetButton.addEventListener('click', () => {
         dayBox.classList.remove('opened');
     })
+
+    // Add a click event listener to close the modal
+    closeModalButton.addEventListener('click', () => {
+        closeModal();
+    });
     
     // Allign the values of the source array to the day number
     const iconData = source[i - 1]; 
